@@ -4,24 +4,27 @@
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
 /// <reference path="objects/gameobject.ts" />
-/// <reference path="objects/plane.ts" />
-/// <reference path="objects/island.ts" />
-/// <reference path="objects/cloud.ts" />
-/// <reference path="objects/ocean.ts" />
+/// <reference path="objects/road.ts" />
+/// <reference path="objects/car.ts" />
+/// <reference path="objects/mycar.ts" />
+/// <reference path="objects/gas.ts" />
 // Global game Variables
 var canvas;
 var stage;
 var assetLoader;
 // Game Objects 
 var road;
+var gas;
 var mycar;
 var car1 = [];
 var car2 = [];
+var lanes = [0, 0, 0, 0, 0, 0, 0, 0];
 var manifest = [
     { id: "mycar", src: "assets/images/mycar.png" },
     { id: "road", src: "assets/images/road.png" },
     { id: "car1", src: "assets/images/car1.png" },
     { id: "car2", src: "assets/images/car2.png" },
+    { id: "gas", src: "assets/images/gas.png" },
     { id: "engine", src: "assets/audio/engine.ogg" }
 ];
 function Preload() {
@@ -62,6 +65,7 @@ function checkCollision(collider: objects.GameObject) {
 */
 function gameLoop() {
     road.update();
+    gas.update();
     mycar.update();
     for (var car = 0; car < 4; car++) {
         car1[car].update();
@@ -74,15 +78,18 @@ function main() {
     //Road Object
     road = new objects.Road();
     stage.addChild(road);
+    //Gas Object
+    gas = new objects.Gas();
+    stage.addChild(gas);
     //MyCar Object
     mycar = new objects.MyCar();
     stage.addChild(mycar);
     for (var car = 0; car < 4; car++) {
-        car1[car] = new objects.Car("car1", car);
+        car1[car] = new objects.Car("car1", car * 2);
         stage.addChild(car1[car]);
     }
     for (var car = 0; car < 4; car++) {
-        car2[car] = new objects.Car("car2", car + 4);
+        car2[car] = new objects.Car("car2", 1 + (car * 2));
         stage.addChild(car2[car]);
     }
 }

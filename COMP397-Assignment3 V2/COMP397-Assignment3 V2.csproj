@@ -62,7 +62,6 @@
     <Content Include="assets\audio\engine.ogg" />
     <Content Include="assets\audio\thunder.ogg" />
     <Content Include="assets\audio\yay.ogg" />
-    <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\car1.png" />
     <Content Include="assets\images\car2.png" />
     <Content Include="assets\images\coin.png" />
@@ -71,11 +70,7 @@
     <Content Include="assets\images\mycar.png" />
     <Content Include="assets\images\road.png" />
     <Content Include="Scripts\game.js.map" />
-    <Content Include="Scripts\objects\cloud.js.map" />
     <Content Include="Scripts\objects\gameobject.js.map" />
-    <Content Include="Scripts\objects\island.js.map" />
-    <Content Include="Scripts\objects\ocean.js.map" />
-    <Content Include="Scripts\objects\plane.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -84,12 +79,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\1945.bmp" />
-    <Content Include="assets\images\cloud.png" />
-    <Content Include="assets\images\island.png" />
-    <Content Include="assets\images\ocean.gif" />
-    <Content Include="assets\images\plane.png" />
-    <Content Include="assets\images\sideplane.gif" />
     <Content Include="css\game.css" />
     <Content Include="index.html" />
     <Content Include="Scripts\game.js" />
@@ -97,11 +86,7 @@
     <Content Include="Scripts\lib\preloadjs-0.6.0.min.js" />
     <Content Include="Scripts\lib\soundjs-0.6.0.min.js" />
     <Content Include="Scripts\lib\tweenjs-0.6.0.min.js" />
-    <Content Include="Scripts\objects\cloud.js" />
     <Content Include="Scripts\objects\gameobject.js" />
-    <Content Include="Scripts\objects\island.js" />
-    <Content Include="Scripts\objects\ocean.js" />
-    <Content Include="Scripts\objects\plane.js" />
     <None Include="Scripts\_references.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -111,12 +96,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\game.ts" />
     <TypeScriptCompile Include="Scripts\objects\car.ts" />
-    <TypeScriptCompile Include="Scripts\objects\cloud.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
-    <TypeScriptCompile Include="Scripts\objects\island.ts" />
+    <TypeScriptCompile Include="Scripts\objects\gas.ts" />
     <TypeScriptCompile Include="Scripts\objects\mycar.ts" />
-    <TypeScriptCompile Include="Scripts\objects\ocean.ts" />
-    <TypeScriptCompile Include="Scripts\objects\plane.ts" />
     <TypeScriptCompile Include="Scripts\objects\road.ts" />
     <TypeScriptCompile Include="Scripts\typings\createjs-lib\createjs-lib.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\easeljs\easeljs.d.ts" />

@@ -6,29 +6,32 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    var Road = (function (_super) {
-        __extends(Road, _super);
+    var Gas = (function (_super) {
+        __extends(Gas, _super);
         //CONSTRUCTOR
-        function Road() {
-            _super.call(this, assetLoader.getResult("road"));
+        function Gas() {
+            _super.call(this, assetLoader.getResult("gas"));
             this._dx = 4;
             this.width = this.getBounds().width;
+            this.height = this.getBounds().height;
             //This is x
-            this.x = 0;
+            this.x = 720;
+            this.y = 32 + (Math.random() * (480 - 64));
             this.reset();
         }
         //PUBLIC METHODS
-        Road.prototype.update = function () {
+        Gas.prototype.update = function () {
             this.x -= this._dx;
             if (this.x <= -(this.width / 2) - 10) {
                 this.reset();
             }
         };
-        Road.prototype.reset = function () {
-            this.x = 0;
+        Gas.prototype.reset = function () {
+            this.x = 720;
+            this.y = 32 + (Math.random() * (480 - 64));
         };
-        return Road;
+        return Gas;
     })(createjs.Bitmap);
-    objects.Road = Road;
+    objects.Gas = Gas;
 })(objects || (objects = {}));
-//# sourceMappingURL=road.js.map
+//# sourceMappingURL=gas.js.map
