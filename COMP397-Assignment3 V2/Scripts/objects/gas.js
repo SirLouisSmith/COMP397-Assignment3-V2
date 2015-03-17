@@ -10,13 +10,13 @@ var objects;
         __extends(Gas, _super);
         //CONSTRUCTOR
         function Gas() {
-            _super.call(this, assetLoader.getResult("gas"));
-            this._dx = 4;
+            _super.call(this, "gas");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             //This is x
             this.x = 720;
             this.y = 32 + (Math.random() * (480 - 64));
+            this._dx = 4;
             this.reset();
         }
         //PUBLIC METHODS
@@ -31,7 +31,7 @@ var objects;
             this.y = 32 + (Math.random() * (480 - 64));
         };
         return Gas;
-    })(createjs.Bitmap);
+    })(objects.GameObject);
     objects.Gas = Gas;
 })(objects || (objects = {}));
 //# sourceMappingURL=gas.js.map

@@ -1,19 +1,19 @@
 ﻿module objects {
-    export class Gas extends createjs.Bitmap {
+    export class Gas extends objects.GameObject {
 
         public width: number;
         public height: number;
-        private _dx: number = 4;
 
         //CONSTRUCTOR
         constructor() {
-            super(assetLoader.getResult("gas"));
+            super("gas");
 
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             //This is x
             this.x = 720;
             this.y = 32 + (Math.random() * (480 - 64));
+            this._dx = 4;
 
             this.reset();
         }

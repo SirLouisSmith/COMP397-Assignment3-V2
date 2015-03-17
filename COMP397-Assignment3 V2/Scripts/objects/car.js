@@ -9,14 +9,13 @@ var objects;
     var Car = (function (_super) {
         __extends(Car, _super);
         //CONSTRUCTOR
-        function Car(name, lane) {
-            _super.call(this, assetLoader.getResult(name));
+        function Car(lane) {
+            _super.call(this, "car1");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this._lane = lane;
             this.x = 720;
             this.y = (32 + this.height * 0.5) + ((this.height + 2) * this._lane);
-            console.log("Lane " + this._lane + ": " + this.y);
             this._dx = Math.floor((Math.random() * 3) + 4);
             this.reset();
             this.regX = this.width * 0.5;
@@ -34,7 +33,7 @@ var objects;
             this._dx = Math.floor((Math.random() * 4) + 5);
         };
         return Car;
-    })(createjs.Bitmap);
+    })(objects.GameObject);
     objects.Car = Car;
 })(objects || (objects = {}));
 //# sourceMappingURL=car.js.map

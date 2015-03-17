@@ -1,14 +1,13 @@
 ﻿module objects {
-    export class Car extends createjs.Bitmap {
+    export class Car extends objects.GameObject {
 
         public width: number;
         public height: number;
-        private _dx: number;
         private _lane: number;
 
         //CONSTRUCTOR
-        constructor(name: string, lane: number) {
-            super(assetLoader.getResult(name));
+        constructor(lane: number) {
+            super("car1");
 
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
@@ -17,7 +16,6 @@
 
             this.x = 720;
             this.y = (32 + this.height * 0.5) + ((this.height + 2) * this._lane);
-            console.log("Lane " + this._lane + ": " + this.y);
 
             this._dx = Math.floor((Math.random() * 3) + 4);
             this.reset();

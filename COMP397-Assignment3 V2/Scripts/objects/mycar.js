@@ -11,6 +11,8 @@ var objects;
         //CONSTRUCTOR
         function MyCar() {
             _super.call(this, assetLoader.getResult("mycar"));
+            this.width = this.getBounds().width;
+            this.height = this.getBounds().height;
             this.x = 100;
             this.regX = this.getBounds().width * 0.5;
             this.regY = this.getBounds().height * 0.5;
