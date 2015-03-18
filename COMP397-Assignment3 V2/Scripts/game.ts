@@ -4,14 +4,20 @@
 /// <reference path="typings/soundjs/soundjs.d.ts" />
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
 
+/// <reference path="objects/button.ts" />
 /// <reference path="objects/road.ts" />
 /// <reference path="objects/car2.ts" />
 /// <reference path="objects/car.ts" />
 /// <reference path="objects/mycar.ts" />
 /// <reference path="objects/gas.ts" />
 /// <reference path="objects/scoreboard.ts" />
+/// <reference path="objects/text.ts" />
 
-
+//Author: Louis Smith
+//File: game.ts
+//Last Modified Date: 18/03/2015
+//Description: This is the game manager that runs the entire game,
+//  changes states, and keep track of score
 
 
 // Global game Variables
@@ -27,6 +33,8 @@ var currentState: number;
 var currentStateFunction: any;
 var stateChanged: boolean = false;
 
+var road: objects.Road;
+
 var menu: states.Menu;
 var gameplay: states.GamePlay;
 var gameover: states.GameOver;
@@ -37,6 +45,10 @@ var manifest = [
     { id: "car1", src: "assets/images/car1.png" },
     { id: "car2", src: "assets/images/car2.png" },
     { id: "gas", src: "assets/images/gas.png" },
+    { id: "playBtn", src: "assets/images/play.png" },
+    { id: "tryAgainBtn", src: "assets/images/tryAgain.png" },
+    { id: "title", src: "assets/images/GameTitle.png" },
+    { id: "gameover", src: "assets/images/GameOver.png" },
     { id: "engine", src: "assets/audio/engine.ogg" }
 ];
 
@@ -57,12 +69,17 @@ function init() {
     createjs.Ticker.setFPS(60); // 60 frames per second
     createjs.Ticker.addEventListener("tick", gameLoop);
 
+    //Road Object
+    road = new objects.Road();
+    stage.addChild(road);
+
     currentState = constants.MENU_STATE;
     changeState(currentState);
 }
 
 
 function gameLoop() {
+    road.update();
 
     if (stateChanged) {
         changeState(currentState);

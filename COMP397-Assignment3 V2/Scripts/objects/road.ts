@@ -1,4 +1,9 @@
-﻿module objects {
+﻿//Author: Louis Smith
+//File: road.ts
+//Last Modified Date: 17/03/2015
+//Description: This is the background object
+
+module objects {
     export class Road extends createjs.Bitmap {
 
         public width: number;

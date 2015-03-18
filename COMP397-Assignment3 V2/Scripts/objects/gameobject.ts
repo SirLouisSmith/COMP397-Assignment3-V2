@@ -1,4 +1,10 @@
-﻿module objects {
+﻿//Author: Louis Smith
+//File: gameobject.ts
+//Last Modified Date: 18/03/2015
+//Description: This is the general game object that declares the image
+//  and bounds
+
+module objects {
     // GAMEOBJECT CLASS
     export class GameObject extends createjs.Bitmap {
         // PUBLIC INSTANCE VARIABLES

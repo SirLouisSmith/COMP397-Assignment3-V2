@@ -1,4 +1,9 @@
-﻿module objects {
+﻿//Author: Louis Smith
+//File: car.ts
+//Last Modified Date: 18/03/2015
+//Description: This is the first enemy that drives in a straight line
+
+module objects {
     export class Car extends objects.GameObject {
 
         public width: number;

@@ -1,4 +1,10 @@
-﻿module objects {
+﻿//Author: Louis Smith
+//File: car2.ts
+//Last Modified Date: 18/03/2015
+//Description: This is a second version of the enemy,
+//  with a random chance to change lanes
+
+module objects {
     export class Car2 extends objects.GameObject {
 
         public width: number;
@@ -11,7 +17,6 @@
         private _up: boolean = false;
         private _magicNum: number;
         private _picker: number;
-        private _range: number;
 
         //CONSTRUCTOR
         constructor(lane: number) {
@@ -34,9 +39,8 @@
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
 
-            this._range = 50;
-            this._magicNum = Math.floor(Math.random() * this._range);
-            this._picker = Math.floor(Math.random() * this._range);
+            this._magicNum = Math.floor(Math.random() * constants.RND_RANGE);
+            this._picker = Math.floor(Math.random() * constants.RND_RANGE);
         }
         //PUBLIC METHODS
         public update() {
@@ -46,14 +50,14 @@
                     this.y += this._dy;
                     if (this.y >= this._lane2) {
                         this._up = true;
-                        this._picker = Math.floor(Math.random() * this._range);
+                        this._picker = Math.floor(Math.random() * constants.RND_RANGE);
                     }
                 }
                 else {
                     this.y -= this._dy;
                     if (this.y <= this._lane1) {
                         this._up = false;
-                        this._picker = Math.floor(Math.random() * this._range);
+                        this._picker = Math.floor(Math.random() * constants.RND_RANGE);
                     }
                 }
             }

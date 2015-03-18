@@ -1,3 +1,7 @@
+//Author: Louis Smith
+//File: gameplay.ts
+//Last Modified Date: 18/03/2015
+//Description: This is the state where the game plays
 var states;
 (function (states) {
     var GamePlay = (function () {
@@ -7,9 +11,6 @@ var states;
             this.car2 = [];
             // Instantiate Game Container
             this.game = new createjs.Container();
-            //Road Object
-            this.road = new objects.Road();
-            this.game.addChild(this.road);
             //Gas Object
             this.gas = new objects.Gas();
             this.game.addChild(this.gas);
@@ -47,7 +48,7 @@ var states;
                             this.scoreboard.lives--;
                         }
                         if (collider.name == "gas") {
-                            this.scoreboard.score += 100;
+                            this.scoreboard.score += constants.POINTS;
                         }
                     }
                     collider.isColliding = true;
@@ -58,7 +59,6 @@ var states;
             }
         }; //checkCollision Method
         GamePlay.prototype.update = function () {
-            this.road.update();
             this.gas.update();
             this.checkCollision(this.gas);
             this.mycar.update();

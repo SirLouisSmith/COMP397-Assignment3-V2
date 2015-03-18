@@ -65,10 +65,14 @@
     <Content Include="assets\images\car1.png" />
     <Content Include="assets\images\car2.png" />
     <Content Include="assets\images\coin.png" />
+    <Content Include="assets\images\GameOver.png" />
+    <Content Include="assets\images\GameTitle.png" />
     <Content Include="assets\images\gas.png" />
     <Content Include="assets\images\loading.jpg" />
     <Content Include="assets\images\mycar.png" />
+    <Content Include="assets\images\play.png" />
     <Content Include="assets\images\road.png" />
+    <Content Include="assets\images\tryAgain.png" />
     <Content Include="Scripts\game.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -94,6 +98,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\constants.ts" />
     <TypeScriptCompile Include="Scripts\game.ts" />
+    <TypeScriptCompile Include="Scripts\objects\button.ts" />
     <TypeScriptCompile Include="Scripts\objects\car.ts" />
     <TypeScriptCompile Include="Scripts\objects\car2.ts" />
     <TypeScriptCompile Include="Scripts\objects\gameobject.ts" />
@@ -101,6 +106,7 @@
     <TypeScriptCompile Include="Scripts\objects\mycar.ts" />
     <TypeScriptCompile Include="Scripts\objects\road.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
+    <TypeScriptCompile Include="Scripts\objects\text.ts" />
     <TypeScriptCompile Include="Scripts\states\gameover.ts" />
     <TypeScriptCompile Include="Scripts\states\gameplay.ts" />
     <TypeScriptCompile Include="Scripts\states\menu.ts" />

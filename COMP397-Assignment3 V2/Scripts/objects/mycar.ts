@@ -1,4 +1,9 @@
-﻿module objects {
+﻿//Author: Louis Smith
+//File: mycar.ts
+//Last Modified Date: 16/03/2015
+//Description: This is the player character that can move up and down
+
+module objects {
     export class MyCar extends createjs.Bitmap {
 
         public width: number;

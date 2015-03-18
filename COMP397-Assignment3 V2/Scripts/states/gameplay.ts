@@ -1,8 +1,13 @@
-﻿module states {
+﻿//Author: Louis Smith
+//File: gameplay.ts
+//Last Modified Date: 18/03/2015
+//Description: This is the state where the game plays
+
+module states {
     export class GamePlay {
         //Game Objects
         public game: createjs.Container;
-        public road: objects.Road;
+
         public gas: objects.Gas;
         public mycar: objects.MyCar;
         public car1 = [];
@@ -12,10 +17,6 @@
         constructor() {
             // Instantiate Game Container
             this.game = new createjs.Container();
-
-            //Road Object
-            this.road = new objects.Road();
-            this.game.addChild(this.road);
 
             //Gas Object
             this.gas = new objects.Gas();
@@ -60,7 +61,7 @@
                             this.scoreboard.lives--;
                         }
                         if (collider.name == "gas") {
-                            this.scoreboard.score += 100;
+                            this.scoreboard.score += constants.POINTS;
                         }
                     }
                     collider.isColliding = true;
@@ -71,8 +72,6 @@
         }//checkCollision Method
 
         public update() {
-            this.road.update();
-
             this.gas.update();
             this.checkCollision(this.gas);
 

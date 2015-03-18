@@ -1,4 +1,9 @@
-﻿module objects {
+﻿//Author: Louis Smith
+//File: gas.ts
+//Last Modified Date: 17/03/2015
+//Description: This is the item that gives points when the player collects it
+
+module objects {
     export class Gas extends objects.GameObject {
 
         public width: number;
