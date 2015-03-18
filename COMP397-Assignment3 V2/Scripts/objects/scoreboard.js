@@ -1,3 +1,8 @@
+//Author: Louis Smith
+//File: scoreboard.ts
+//Last Modified Date: 18/03/2015
+//Description: This is the scoreboard file that keeps track of the
+//  player lives and score and displays it
 var objects;
 (function (objects) {
     var ScoreBoard = (function () {

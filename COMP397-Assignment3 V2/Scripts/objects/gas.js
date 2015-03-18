@@ -1,3 +1,7 @@
+//Author: Louis Smith
+//File: gas.ts
+//Last Modified Date: 17/03/2015
+//Description: This is the item that gives points when the player collects it
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }

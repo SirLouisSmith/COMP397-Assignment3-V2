@@ -1,7 +1,7 @@
-﻿//Author: Louis Smith
-//File: car2.ts
-//Last Modified Date: 18/03/2015
-//Description: This is a second version of the enemy,
+﻿// Author: Louis Smith
+// File: car2.ts
+// Last Modified Date: 18/03/2015
+// Description: This is a second version of the enemy,
 //  with a random chance to change lanes
 
 module objects {
@@ -11,14 +11,14 @@ module objects {
         public height: number;
         private _lane: number;
 
-        //LANE CHANGE VARIABLES
+        // LANE CHANGE VARIABLES
         private _lane1: number;
         private _lane2: number;
         private _up: boolean = false;
         private _magicNum: number;
         private _picker: number;
 
-        //CONSTRUCTOR
+        // CONSTRUCTOR
         constructor(lane: number) {
             super("car2");
 
@@ -42,10 +42,10 @@ module objects {
             this._magicNum = Math.floor(Math.random() * constants.RND_RANGE);
             this._picker = Math.floor(Math.random() * constants.RND_RANGE);
         }
-        //PUBLIC METHODS
+        // PUBLIC METHODS
         public update() {
             this.x -= this._dx;
-            if (this._magicNum == this._picker) {
+            if (this._magicNum === this._picker) {
                 if (!this._up) {
                     this.y += this._dy;
                     if (this.y >= this._lane2) {
@@ -53,7 +53,7 @@ module objects {
                         this._picker = Math.floor(Math.random() * constants.RND_RANGE);
                     }
                 }
-                else {
+                if (this._up) {
                     this.y -= this._dy;
                     if (this.y <= this._lane1) {
                         this._up = false;
@@ -61,11 +61,11 @@ module objects {
                     }
                 }
             }
-            else {
-                this._picker = Math.floor(Math.random() * this._range);
+            if (this._magicNum !== this._picker) {
+                this._picker = Math.floor(Math.random() * constants.RND_RANGE);
             }
 
-            if (this.x <= 0 - this.width) { //if island left the bottom of the screen
+            if (this.x <= 0 - this.width) {
                 this.reset();
             }
         }

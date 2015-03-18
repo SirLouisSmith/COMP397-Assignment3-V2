@@ -1,3 +1,7 @@
+//Author: Louis Smith
+//File: text.ts
+//Last Modified Date: 18/03/2015
+//Description: This managers the text labels that can be placed in the game
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }

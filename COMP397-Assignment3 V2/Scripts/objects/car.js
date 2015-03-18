@@ -1,3 +1,7 @@
+//Author: Louis Smith
+//File: car.ts
+//Last Modified Date: 18/03/2015
+//Description: This is the first enemy that drives in a straight line
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }

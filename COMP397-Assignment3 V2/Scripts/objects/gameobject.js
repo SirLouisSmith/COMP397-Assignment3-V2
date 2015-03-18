@@ -1,3 +1,8 @@
+//Author: Louis Smith
+//File: gameobject.ts
+//Last Modified Date: 18/03/2015
+//Description: This is the general game object that declares the image
+//  and bounds
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }

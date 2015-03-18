@@ -1,11 +1,11 @@
-﻿//Author: Louis Smith
-//File: gameplay.ts
-//Last Modified Date: 18/03/2015
-//Description: This is the state where the game plays
+﻿// Author: Louis Smith
+// File: gameplay.ts
+// Last Modified Date: 18/03/2015
+// Description: This is the state where the game plays
 
 module states {
     export class GamePlay {
-        //Game Objects
+        // Game Objects
         public game: createjs.Container;
 
         public gas: objects.Gas;
@@ -13,33 +13,33 @@ module states {
         public car1 = [];
         public car2 = [];
         public scoreboard: objects.ScoreBoard;
-        //Constructor
+        // Constructor
         constructor() {
             // Instantiate Game Container
             this.game = new createjs.Container();
 
-            //Gas Object
+            // Gas Object
             this.gas = new objects.Gas();
             this.game.addChild(this.gas);
 
-            //MyCar Object
+            // MyCar Object
             this.mycar = new objects.MyCar();
             this.game.addChild(this.mycar);
 
-            //Car1 Object
+            // Car1 Object
             this.car1[0] = new objects.Car(0);
             this.car1[1] = new objects.Car(7);
-            for (var car = 0; car < 2; car++) {
-                this.game.addChild(this.car1[car]);
+            for (var i = 0; i < 2; i++) {
+                this.game.addChild(this.car1[i]);
             }
 
-            //Car2 Object
-            for (var car = 0; car < 3; car++) {
-                this.car2[car] = new objects.Car2(1 + (car * 2));
-                this.game.addChild(this.car2[car]);
+            // Car2 Object
+            for (var c = 0; c < 3; c++) {
+                this.car2[c] = new objects.Car2(1 + (c * 2));
+                this.game.addChild(this.car2[c]);
             }
 
-            //ScoreBoard Object
+            // ScoreBoard Object
             this.scoreboard = new objects.ScoreBoard(this.game);
 
             stage.addChild(this.game);
@@ -55,13 +55,17 @@ module states {
                 var objectPosition: createjs.Point = new createjs.Point(collider.x, collider.y);
                 var theDistance = this.distance(carPosition, objectPosition);
                 if (theDistance < ((this.mycar.height * 0.5) + (collider.height * 0.5))) {
-                    if (collider.isColliding != true) {
-                        //createjs.Sound.play(collider.sound);
-                        if (collider.name == "car1" || collider.name == "car2") {
-                            this.scoreboard.lives--;
-                        }
-                        if (collider.name == "gas") {
-                            this.scoreboard.score += constants.POINTS;
+                    if (collider.isColliding !== true) {
+                        if (!this.mycar.safe) {
+                            //createjs.Sound.play(collider.sound);
+                            if (collider.name === "car1" || collider.name === "car2") {
+                                this.mycar.hit();
+                                this.scoreboard.lives--;
+                            }
+                            if (collider.name === "gas") {
+                                this.scoreboard.score += constants.POINTS;
+                                this.gas.reset();
+                            }
                         }
                     }
                     collider.isColliding = true;
@@ -69,16 +73,16 @@ module states {
                     collider.isColliding = false;
                 }
             }
-        }//checkCollision Method
+        }// checkCollision Method
 
         public update() {
             this.gas.update();
             this.checkCollision(this.gas);
 
             this.mycar.update();
-            for (var car = 0; car < 2; car++) {
-                this.car1[car].update();
-                this.checkCollision(this.car1[car]);
+            for (var i = 0; i < 2; i++) {
+                this.car1[i].update();
+                this.checkCollision(this.car1[i]);
             }
             for (var car = 0; car < 3; car++) {
                 this.car2[car].update();
