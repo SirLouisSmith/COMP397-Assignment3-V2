@@ -36,11 +36,15 @@ var manifest = [
     { id: "car1", src: "assets/images/car1.png" },
     { id: "car2", src: "assets/images/car2.png" },
     { id: "gas", src: "assets/images/gas.png" },
-    { id: "playBtn", src: "assets/images/play.png" },
-    { id: "tryAgainBtn", src: "assets/images/tryAgain.png" },
+    { id: "playBtn", src: "assets/images/playSign.png" },
+    { id: "tryAgainBtn", src: "assets/images/trySign.png" },
+    { id: "menuBtn", src: "assets/images/menuSign.png" },
     { id: "title", src: "assets/images/GameTitle.png" },
     { id: "gameover", src: "assets/images/GameOver.png" },
-    { id: "engine", src: "assets/audio/engine.ogg" }
+    { id: "engine", src: "assets/audio/engine.wav" },
+    { id: "thunder", src: "assets/audio/skid.mp3" },
+    { id: "item", src: "assets/audio/Gas.ogg" },
+    { id: "end", src: "assets/audio/GameOver.ogg" }
 ];
 function Preload() {
     assetLoader = new createjs.LoadQueue(); // create a new preloader

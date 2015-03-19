@@ -59,9 +59,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\audio\engine.ogg" />
-    <Content Include="assets\audio\thunder.ogg" />
-    <Content Include="assets\audio\yay.ogg" />
+    <Content Include="assets\audio\skid.mp3" />
+    <Content Include="assets\audio\engine.wav" />
     <Content Include="assets\images\car1.png" />
     <Content Include="assets\images\car2.png" />
     <Content Include="assets\images\coin.png" />
@@ -69,11 +68,17 @@
     <Content Include="assets\images\GameTitle.png" />
     <Content Include="assets\images\gas.png" />
     <Content Include="assets\images\loading.jpg" />
+    <Content Include="assets\images\menuSign.png" />
     <Content Include="assets\images\mycar.png" />
     <Content Include="assets\images\play.png" />
+    <Content Include="assets\images\playSign.png" />
     <Content Include="assets\images\road.png" />
     <Content Include="assets\images\tryAgain.png" />
+    <Content Include="assets\images\trySign.png" />
     <Content Include="Scripts\game.js.map" />
+    <Content Include="assets\audio\GameOver.ogg" />
+    <Content Include="assets\audio\Gas.ogg" />
+    <Content Include="assets\audio\Start.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

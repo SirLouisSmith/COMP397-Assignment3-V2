@@ -1,6 +1,6 @@
 //Author: Louis Smith
 //File: menu.ts
-//Last Modified Date: 18/03/2015
+//Last Modified Date: 19/03/2015
 //Description: This is the menu state where you can start the game
 var states;
 (function (states) {
@@ -13,10 +13,13 @@ var states;
             //Title Image
             this.title = new createjs.Bitmap(assetLoader.getResult("title"));
             this.title.x = 120;
-            this.title.y = 50;
+            this.title.y = 30;
             this.game.addChild(this.title);
+            this.instTxt = "You're driving against traffic.\nAvoid getting hit by upcoming traffic.\nCollect gas to gain points.";
+            this.instructions = new objects.Text(780, 200, this.instTxt);
+            this.game.addChild(this.instructions);
             //Play Button
-            this.playBtn = new objects.Button(320, 280, "playBtn");
+            this.playBtn = new objects.Button(320, 300, "playBtn");
             this.playBtn.on("click", this.clicked, this);
             this.game.addChild(this.playBtn);
             stage.addChild(this.game);

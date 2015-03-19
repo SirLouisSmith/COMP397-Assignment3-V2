@@ -17,6 +17,7 @@ var objects;
         function Car2(lane) {
             _super.call(this, "car2");
             this._up = false;
+            this.sound = "thunder";
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this._lane = lane;

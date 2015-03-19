@@ -15,6 +15,7 @@ var objects;
         //CONSTRUCTOR
         function Car(lane) {
             _super.call(this, "car1");
+            this.sound = "thunder";
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this._lane = lane;

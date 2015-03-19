@@ -13,12 +13,15 @@ module states {
         public highScoreTxt: objects.Text;
         public tryAgainBtn: objects.Button;
         public tryAgain: boolean = false;
+        public menuBtn: objects.Button;
+        public menu: boolean = false;
+        public sound: createjs.Sound;
 
         //Constructor
         constructor() {
             // Instantiate Game Container
             this.game = new createjs.Container();
-
+            createjs.Sound.play("end");
             //Over Image
             this.over = new createjs.Bitmap(assetLoader.getResult("gameover"));
             this.over.x = 120;
@@ -38,6 +41,11 @@ module states {
             this.tryAgainBtn.on("click", this.clicked, this);
             this.game.addChild(this.tryAgainBtn);
 
+            //Menu Object
+            this.menuBtn = new objects.Button(320, 390, "menuBtn");
+            this.menuBtn.on("click", this.clickedMenu, this);
+            this.game.addChild(this.menuBtn);
+
             stage.addChild(this.game);
         }
 
@@ -45,11 +53,22 @@ module states {
             this.tryAgain = true;
         }
 
+        public clickedMenu() {
+            this.menu = true;
+        }
+
         public update() {
             if (this.tryAgain) {
                 this.game.removeAllChildren();
                 stage.removeChild(this.game);
                 currentState = constants.PLAY_STATE;
+                stateChanged = true;
+            }
+
+            if (this.menu) {
+                this.game.removeAllChildren();
+                stage.removeChild(this.game);
+                currentState = constants.MENU_STATE;
                 stateChanged = true;
             }
 

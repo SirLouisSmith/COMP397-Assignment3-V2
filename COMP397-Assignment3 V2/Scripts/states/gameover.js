@@ -8,8 +8,10 @@ var states;
         //Constructor
         function GameOver() {
             this.tryAgain = false;
+            this.menu = false;
             // Instantiate Game Container
             this.game = new createjs.Container();
+            createjs.Sound.play("end");
             //Over Image
             this.over = new createjs.Bitmap(assetLoader.getResult("gameover"));
             this.over.x = 120;
@@ -25,16 +27,29 @@ var states;
             this.tryAgainBtn = new objects.Button(320, 320, "tryAgainBtn");
             this.tryAgainBtn.on("click", this.clicked, this);
             this.game.addChild(this.tryAgainBtn);
+            //Menu Object
+            this.menuBtn = new objects.Button(320, 390, "menuBtn");
+            this.menuBtn.on("click", this.clickedMenu, this);
+            this.game.addChild(this.menuBtn);
             stage.addChild(this.game);
         }
         GameOver.prototype.clicked = function () {
             this.tryAgain = true;
+        };
+        GameOver.prototype.clickedMenu = function () {
+            this.menu = true;
         };
         GameOver.prototype.update = function () {
             if (this.tryAgain) {
                 this.game.removeAllChildren();
                 stage.removeChild(this.game);
                 currentState = constants.PLAY_STATE;
+                stateChanged = true;
+            }
+            if (this.menu) {
+                this.game.removeAllChildren();
+                stage.removeChild(this.game);
+                currentState = constants.MENU_STATE;
                 stateChanged = true;
             }
             stage.update();

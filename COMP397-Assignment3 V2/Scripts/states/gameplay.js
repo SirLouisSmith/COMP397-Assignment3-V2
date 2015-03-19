@@ -44,7 +44,7 @@ var states;
                 if (theDistance < ((this.mycar.height * 0.5) + (collider.height * 0.5))) {
                     if (collider.isColliding !== true) {
                         if (!this.mycar.safe) {
-                            //createjs.Sound.play(collider.sound);
+                            createjs.Sound.play(collider.sound);
                             if (collider.name === "car1" || collider.name === "car2") {
                                 this.mycar.hit();
                                 this.scoreboard.lives--;

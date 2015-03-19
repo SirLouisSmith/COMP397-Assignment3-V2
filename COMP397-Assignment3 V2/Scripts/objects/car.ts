@@ -13,6 +13,7 @@ module objects {
         //CONSTRUCTOR
         constructor(lane: number) {
             super("car1");
+            this.sound = "thunder";
 
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;

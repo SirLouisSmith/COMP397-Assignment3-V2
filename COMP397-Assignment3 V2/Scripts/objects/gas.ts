@@ -12,7 +12,7 @@ module objects {
         //CONSTRUCTOR
         constructor() {
             super("gas");
-
+            this.sound = "item";
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             //This is x
