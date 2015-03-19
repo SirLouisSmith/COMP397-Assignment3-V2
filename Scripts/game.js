@@ -5,12 +5,12 @@
 /// <reference path="typings/preloadjs/preloadjs.d.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="objects/road.ts" />
+/// <reference path="objects/text.ts" />
 /// <reference path="objects/car2.ts" />
 /// <reference path="objects/car.ts" />
 /// <reference path="objects/mycar.ts" />
 /// <reference path="objects/gas.ts" />
 /// <reference path="objects/scoreboard.ts" />
-/// <reference path="objects/text.ts" />
 //Author: Louis Smith
 //File: game.ts
 //Last Modified Date: 18/03/2015
